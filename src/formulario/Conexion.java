@@ -134,28 +134,31 @@ public class Conexion {
 //        return encontrado;
 //    }
 
-    //Metodo para insertar usuarios nuevos a la base da datos.
-//    public void insertarUsuarios(Variables registroUsuarios) {
-//        try {
-//            //  1      2        3                      4               5              6         7
-//            String sql = "INSERT INTO usuarios(nombre,apellido,correo_electronico,numero_telefonico,nombre_usuario,password,tipo_usuario) VALUES(?,?,?,?,?,?,?)";
-//            PreparedStatement statement = conexion.prepareStatement(sql);
-//
-//            statement.setString(1, registroUsuarios.getNombre());
-//            statement.setString(2, registroUsuarios.getApellido());
-//            statement.setString(3, registroUsuarios.getCorreo());
-//            statement.setInt(4, registroUsuarios.getNumeroTelefonico());
-//            statement.setString(5, registroUsuarios.getNombreUsuario());
-//            statement.setString(6, registroUsuarios.getContraseña());
-//            statement.setString(7, "user");
-//            statement.executeUpdate();
-//            JOptionPane.showMessageDialog(null, "Registro Exitoso Usuario");
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Error" + "\n" + e.toString());
-//
-//        }
-//
-//    }
+//    Metodo para insertar usuarios nuevos a la base da datos.
+    public void insertarUsuarios(Variables registroUsuarios) {
+        try {
+            //  1      2        3                      4               5              6         7
+            String sql = "INSERT INTO usuarios(nom,ape,correo,contraseña,direccion,edad,genero,producto,formaPago) VALUES(?,?,?,?,?,?,?,?,?)";
+            PreparedStatement statement = conexion.prepareStatement(sql);
+
+            statement.setString(1, registroUsuarios.getNom());
+            statement.setString(2, registroUsuarios.getApe());
+            statement.setString(3, registroUsuarios.getCorreo());
+            statement.setString(4, registroUsuarios.getContraseña());
+            statement.setString(5, registroUsuarios.getDireccion());
+            statement.setInt(6, registroUsuarios.getEdad());
+            statement.setString(7, registroUsuarios.getGenero());
+            statement.setString(8, registroUsuarios.getProducto());
+            statement.setString(9, registroUsuarios.getFormaPago());
+//            statement.setString(10, "user");
+            statement.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro Exitoso Usuario");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error" + "\n" + e.toString());
+
+        }
+
+    }
 
     // Metodo para modificar usuarios existentes en la base de datos .
 //    public void modUsuarios(Variables modificarUsuario) {
