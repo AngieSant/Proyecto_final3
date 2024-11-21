@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package formulario;
+
 import static formulario.Datos.spEdad;
 import static formulario.Datos.txtApe;
 import static formulario.Datos.txtDirec;
@@ -15,31 +16,28 @@ import javax.swing.JLabel;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.JPanel;
+
 /**
  *
  * @author Nicolas
  */
 
-
-
 public class Verificacion extends javax.swing.JFrame {
 
-  
     private ProductosPedir productosPedir;
-     private final TablaDeRegistro registro;
-    
+    private final TablaDeRegistro registro;
+
     fondoPanel fondo = new fondoPanel();
-    
-    
+
     public Verificacion() {
         this.setContentPane(fondo);
         initComponents();
         registro = new TablaDeRegistro();
-        
+
     }
-    
+
     public void setProductosPedir(ProductosPedir productosPedir) {
-        this.productosPedir=productosPedir;
+        this.productosPedir = productosPedir;
     }
 
     /**
@@ -123,52 +121,37 @@ public class Verificacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        
+
         productosPedir.setVisible(true);
         this.setVisible(false);
-    
+
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        
-         String genero = "";
+  String genero = "";
         if (Datos.rbtnMujer.isSelected()) {
             genero = "Mujer";
         } else {
             genero = "Hombre";
         }
-        
-        
-        
+
         txtaVerifica.setText("Estos son los datos que estas registrando!!!\n\n"
-                    
-                
-          
-                
-                     +"Nombre: "+ txtNom.getText()
-                     +"\nApellido: "+ txtApe.getText()
-                     +"\nCorreo: "+ spEdad.getValue().toString()
-                     +"\nDirección: "+ txtDirec.getText()
-                     +"\nEdad: "+ spEdad.getValue().toString()
-                     +"\nGenero: "+ genero
-//                     +"\nProducto elegido: "+ 
-//                    +"\nForma de pago:" +  
-                    );
+                + "Nombre: " + txtNom.getText()
+                + "\nApellido: " + txtApe.getText()
+                + "\nCorreo: " + spEdad.getValue().toString()
+                + "\nDirección: " + txtDirec.getText()
+                + "\nEdad: " + spEdad.getValue().toString()
+                + "\nGenero: " + genero
+                + "\nProducto elegido: " + Variables.getProducto()
+                + "\nForma de pago:" + Variables.getFormaPago()
+        );
     }//GEN-LAST:event_formWindowActivated
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-//        JOptionPane.showMessageDialog(null, "Datos Registrados Correctamente\n\n"
-//              +"Nombre: "+ Variables.getNom()
-//                     +"\nApellido: "+Variables.getApe()
-//                     +"\nCorreo: "+Variables.getCorreo()
-//                     +"\nDirección: "+Variables.getDireccion()
-//                     +"\nEdad: "+Variables.getEdad()
-//                     +"\nGenero: "+Variables.getGenero()
-//                     +"\nProducto elegido: "+Variables.getProducto()
-//                     +"\nForma de pago: "+Variables.getFormaPago()
-//        );
+        JOptionPane.showMessageDialog(null, "Datos Registrados Correctamente\n\n"     
+        );
 
-    registro.setVerificacion(this);
+        registro.setVerificacion(this);
         registro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -176,8 +159,8 @@ public class Verificacion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
-
+         
+//protected static javax.swing.JComboBox jComboBoxPago;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnRegistrar;

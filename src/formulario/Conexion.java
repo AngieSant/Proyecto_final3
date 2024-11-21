@@ -62,9 +62,9 @@ public class Conexion {
                 producto = rs.getString("producto");
                 formaPago = rs.getString("Foma de Pago");
 
-                Variables cargar = new Variables(nom, ape, correo, contraseña, direccion, edad, genero,
-                producto,formaPago);
-                usuarioLista.add(cargar);
+//                Variables cargar = new Variables(nom, ape, correo, contraseña, direccion, edad, genero,
+//                producto,formaPago);
+//                usuarioLista.add(cargar);
             }
             usuarioLista.toString();
             rs.close();

@@ -11,107 +11,90 @@ package formulario;
  */
 public class Variables {
 
-    private String nom;
-    private String ape;
-    private String correo;
-    private String contraseña;
-    private String direccion;
-    private  int edad;
-    private String genero;
-    private String producto;
-    private String formaPago;
+    private static String nom;
+    private static String ape;
+    private static String correo;
+    private static String contraseña;
+    private static String direccion;
+    private static  int edad;
+    private static String genero;
+    private static String producto;
+    private static String formaPago;
 
     public Variables() {
     }
 
-    public Variables(String nom, String ape, String correo, String contraseña, String direccion, int edad, String genero, String producto, String formaPago) {
-        this.nom = nom;
-        this.ape = ape;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.direccion = direccion;
-        this.edad = edad;
-        this.genero = genero;
-        this.producto = producto;
-        this.formaPago = formaPago;
-    }
-
-    public String getNom() {
+    public static String getNom() {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public static void setNom(String nom) {
+        Variables.nom = nom;
     }
 
-    public String getApe() {
+    public static String getApe() {
         return ape;
     }
 
-    public void setApe(String ape) {
-        this.ape = ape;
+    public static void setApe(String ape) {
+        Variables.ape = ape;
     }
 
-    public String getCorreo() {
+    public static String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public static void setCorreo(String correo) {
+        Variables.correo = correo;
     }
 
-    public String getContraseña() {
+    public static String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public static void setContraseña(String contraseña) {
+        Variables.contraseña = contraseña;
     }
 
-    public String getDireccion() {
+    public static String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public static void setDireccion(String direccion) {
+        Variables.direccion = direccion;
     }
 
-    public int getEdad() {
+    public static int getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public static void setEdad(int edad) {
+        Variables.edad = edad;
     }
 
-    public String getGenero() {
+    public static String getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public static void setGenero(String genero) {
+        Variables.genero = genero;
     }
 
-    public String getProducto() {
+    public static String getProducto() {
         return producto;
     }
 
-    public void setProducto(String producto) {
-        this.producto = producto;
+    public static void setProducto(String producto) {
+        Variables.producto = producto;
     }
 
-    public String getFormaPago() {
+    public static String getFormaPago() {
         return formaPago;
     }
 
-    public void setFormaPago(String formaPago) {
-        this.formaPago = formaPago;
+    public static void setFormaPago(String formaPago) {
+        Variables.formaPago = formaPago;
     }
 
-   
-
     
-
-    
-
 }

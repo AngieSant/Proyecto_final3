@@ -68,11 +68,11 @@ public class ProductosPedir extends javax.swing.JFrame {
         jCheckBoxArenero = new javax.swing.JCheckBox();
         jCheckBoxCocaPerro = new javax.swing.JCheckBox();
         jCheckBoxCocaGato = new javax.swing.JCheckBox();
-        jComboBoxTipoPago = new javax.swing.JComboBox<>();
         jLabelFormaPago = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         btnEnviar = new javax.swing.JButton();
         imagenLabel = new javax.swing.JLabel();
+        jComboBoxPago = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,14 +119,6 @@ public class ProductosPedir extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxTipoPago.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jComboBoxTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta", "Transferencia" }));
-        jComboBoxTipoPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxTipoPagoActionPerformed(evt);
-            }
-        });
-
         jLabelFormaPago.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabelFormaPago.setText("Forma de Pago:");
 
@@ -139,12 +131,14 @@ public class ProductosPedir extends javax.swing.JFrame {
         });
 
         btnEnviar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnEnviar.setText("Enviar");
+        btnEnviar.setText("Resgistrar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
             }
         });
+
+        jComboBoxPago.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Efectivo", "Tarjeta", "Transferencia" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,11 +159,11 @@ public class ProductosPedir extends javax.swing.JFrame {
                             .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(46, 46, 46)
+                                .addComponent(jComboBoxPago, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(103, 103, 103)
-                                .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jCheckBoxCollarPerro)
                         .addGap(18, 18, 18)
@@ -209,8 +203,8 @@ public class ProductosPedir extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFormaPago)
-                    .addComponent(jComboBoxTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                    .addComponent(jComboBoxPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -228,10 +222,6 @@ public class ProductosPedir extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxCocaGatoActionPerformed
 
-    private void jComboBoxTipoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoPagoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxTipoPagoActionPerformed
-
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
 
@@ -241,26 +231,27 @@ public class ProductosPedir extends javax.swing.JFrame {
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
 
-//        Variables.setFormaPago(jComboBoxTipoPago.getSelectedItem().toString());
+     Variables.setFormaPago(jComboBoxPago.getSelectedItem().toString());
+
+
+        String producto = "sin seleccion";
+        if (this.jCheckBoxCollarPerro.isSelected()) {
+            producto = "Collar para Perro";
+        } else if (this.jCheckBoxCollarGato.isSelected()) {
+            producto = "Collar para Gato";
+        } else if (this.jCheckBoxCocaPerro.isSelected()) {
+            producto = "Coca para Perro";
+        } else if (this.jCheckBoxCocaGato.isSelected()) {
+            producto = "Coca para Gato";
+        } else if (this.jCheckBoxCamaPerro.isSelected()) {
+            producto = "Cama para Perro";
+        } else if (this.jCheckBoxCamaGato.isSelected()) {
+            producto = "Cama para Gato";
+        } else if (this.jCheckBoxArenero.isSelected()) {
+            producto = "Arenero";
+        }
 //
-//        String producto = "sin seleccion";
-//        if (this.jCheckBoxCollarPerro.isSelected()) {
-//            producto = "Collar para Perro";
-//        } else if (this.jCheckBoxCollarGato.isSelected()) {
-//            producto = "Collar para Gato";
-//        } else if (this.jCheckBoxCocaPerro.isSelected()) {
-//            producto = "Coca para Perro";
-//        } else if (this.jCheckBoxCocaGato.isSelected()) {
-//            producto = "Coca para Gato";
-//        } else if (this.jCheckBoxCamaPerro.isSelected()) {
-//            producto = "Cama para Perro";
-//        } else if (this.jCheckBoxCamaGato.isSelected()) {
-//            producto = "Cama para Gato";
-//        } else if (this.jCheckBoxArenero.isSelected()) {
-//            producto = "Arenero";
-//        }
-//
-//        Variables.setProducto(producto);
+        Variables.setProducto(producto);
 
         verificacion.setProductosPedir(this);
         verificacion.setVisible(true);
@@ -316,7 +307,7 @@ public class ProductosPedir extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxCocaPerro;
     private javax.swing.JCheckBox jCheckBoxCollarGato;
     private javax.swing.JCheckBox jCheckBoxCollarPerro;
-    private javax.swing.JComboBox<String> jComboBoxTipoPago;
+    protected static javax.swing.JComboBox jComboBoxPago;
     private javax.swing.JLabel jLabelFormaPago;
     private javax.swing.JLabel jLabelProd;
     // End of variables declaration//GEN-END:variables
